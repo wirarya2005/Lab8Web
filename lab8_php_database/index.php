@@ -1,6 +1,5 @@
 <?php
 include("koneksi.php");
-// query untuk menampilkan data
 $sql = 'SELECT * FROM data_barang';
 $result = mysqli_query($conn, $sql);
 ?>
@@ -8,15 +7,17 @@ $result = mysqli_query($conn, $sql);
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Barang</title>
+    <link rel="stylesheet" href="style/app.css">
+
 </head>
 
 <body>
     <div class="container">
         <h1>Data Barang</h1>
+        <a href="tambah.php">Tambah Barang</a>
         <div class="main">
             <table>
                 <tr>
@@ -26,19 +27,20 @@ $result = mysqli_query($conn, $sql);
                     <th>Harga Jual</th>
                     <th>Harga Beli</th>
                     <th>Stok</th>
-                    <th>Aksi</th>
+                    <th colspan="2">Aksi</th>
                 </tr>
                 <?php if ($result): ?>
                     <?php while ($row = mysqli_fetch_array($result)): ?>
                         <tr>
-                            <td><img src="gambar/<?= $row['gambar']; ?>" alt=""<?=
-                                 $row['nama']; ?>"></td>
+                            <td><img src="gambar/<?= $row['gambar']; ?>" alt="" <?=
+                                  $row['nama']; ?>" class="foto-hp"></td>
                             <td><?= $row['nama']; ?></td>
                             <td><?= $row['kategori']; ?></td>
                             <td><?= $row['harga_beli']; ?></td>
                             <td><?= $row['harga_jual']; ?></td>
                             <td><?= $row['stok']; ?></td>
-                            <td><?= $row['id_barang']; ?></td>
+                            <td><a href="ubah.php?id=<?= $row['id_barang']; ?>">Ubah</a></td>
+                            <td><a href="delete.php?id=<?= $row['id_barang']; ?>">Hapus</a></td>
                         </tr>
                     <?php endwhile; else: ?>
                     <tr>

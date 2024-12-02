@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
         $filename = str_replace(' ', '_', $file_gambar['name']);
         $destination = dirname(__FILE__) . '/gambar/' . $filename;
         if (move_uploaded_file($file_gambar['tmp_name'], $destination)) {
-            $gambar = 'gambar/' . $filename;
+            $gambar = $filename;
             ;
         }
     }
@@ -31,19 +31,28 @@ if (isset($_POST['submit'])) {
 
 <head>
     <meta charset="UTF-8">
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style/app.css">
     <title>Tambah Barang</title>
 
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: cadetblue;
+            padding: 0;
+        }
+
         .container {
+            margin: 20px auto;
+            max-width: 960px;
             padding: 2rem;
-            align-items: center;
-            justify-content: center;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
-        input {
-            display: block;
-            padding: 1rem;
-        }
+
+        
     </style>
 </head>
 
@@ -78,7 +87,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="input">
                     <label>File Gambar</label>
-                    <input type="file" name="file_gambar" />
+                    <input type="file" name="file_gambar" required/>
                 </div>
                 <div class="submit">
                     <input type="submit" name="submit" value="Simpan" />
