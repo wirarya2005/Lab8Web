@@ -40,7 +40,7 @@ $result = mysqli_query($conn, $sql);
                             <td><?= $row['harga_jual']; ?></td>
                             <td><?= $row['stok']; ?></td>
                             <td><a href="ubah.php?id=<?= $row['id_barang']; ?>">Ubah</a></td>
-                            <td><a href="delete.php?id=<?= $row['id_barang']; ?>">Hapus</a></td>
+                            <td><a href="hapus.php?id=<?= $row['id_barang']; ?>">Hapus</a></td>
                         </tr>
                     <?php endwhile; else: ?>
                     <tr>
