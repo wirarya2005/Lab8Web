@@ -34,26 +34,6 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="style/app.css">
     <title>Tambah Barang</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: cadetblue;
-            padding: 0;
-        }
-
-        .container {
-            margin: 20px auto;
-            max-width: 960px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        
-    </style>
 </head>
 
 <body>
