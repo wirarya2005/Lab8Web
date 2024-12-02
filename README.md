@@ -22,6 +22,7 @@
 ![hasil-tambah](/screenshoot/hasil-tambah-barang.png)
 
 ## `Melakukan Update/Ubah data pada ubah.php`
+- Melakukan Updated HP OPPO menjadi HP Realme
 ![ubah-data](/screenshoot/ubah-hp-oppo-jadi-realme.png)
 ![hasil-ubah](/screenshoot/hasil-ubah.png)
 
